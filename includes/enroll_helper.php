@@ -144,9 +144,3 @@ function enroll_into_arm_save_record_field($project_id, $event_id, $record_id, $
         return true;
     }
 }
-
-// function pp($a) {
-//     echo "<pre>";
-//     print_r($a);
-//     echo "</pre>";
-// }
