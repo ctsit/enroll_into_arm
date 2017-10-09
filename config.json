@@ -3,8 +3,7 @@
     "namespace": "EnrollIntoArm\\ExternalModule",
     "description": "On Save of the record, this extension automatically assigns the record to a randomly selected arm.",
     "permissions": [
-        "hook_every_page_top",
-        "hook_data_entry_form"
+        "hook_save_record"
     ],
     "authors": [
         {
