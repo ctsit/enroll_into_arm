@@ -14,7 +14,7 @@ This feature also defaults subject_id in the affiliated with the given format.
 
 ## Configuration
 - In the project go to Manage External Module and enable this module for the project.
-- After enabling the module, hit the configure button and add the following json to `Enroll into arm module settings`.
+- After enabling the module, hit the configure button and add the following json to `Enroll into arm module settings`. This will set the project_settings for that project.
 
 ```
 {  
@@ -36,5 +36,8 @@ This feature also defaults subject_id in the affiliated with the given format.
 }
 ```
 
-
-
+## How to use?
+- Enable the randomization for a field.
+- The name of the field whose value is randomized should be placed under `project_settings->randomized_group`. 
+- For construction of subject_id we need first_name, last_name and length of the padded digits to be given, so the field_names for these should be given under json, so that the module automatically picks these values.
+- Also the field that stores the subject_id should be placed under `project_settings->subject_id`
