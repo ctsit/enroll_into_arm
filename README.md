@@ -1,4 +1,4 @@
-# enroll_into_arm
+# Enroll into Arm
 
 A REDCap Module to control the enrollment of subject into a study arm based on the value of a categorical variable. This feature allows automatic enrollment immediately after randomization with the REDCap randomization module.
 
@@ -9,7 +9,7 @@ This feature also defaults subject_id in the affiliated with the given format.
 - [REDCap Modules](https://github.com/vanderbilt/redcap-external-modules)
 
 ## Installation
-- Clone this repo into to an `<redcap-root>/modules/enroll_into_arm_v1.0`.
+- Clone this repo into to an `<redcap-root>/modules/enroll_into_arm_v1.0.0`
 - Go to **Control Center > Manage External Modules** and enable Enroll into arm module.
 
 ## Configuration
