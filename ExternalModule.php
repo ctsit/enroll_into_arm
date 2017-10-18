@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Provides ExternalModule class for Linear Data Entry Workflow.
+ * Provides ExternalModule class for Enroll into Arm.
  */
 
 namespace EnrollIntoArm\ExternalModule;
