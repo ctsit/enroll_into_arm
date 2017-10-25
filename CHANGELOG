@@ -1,0 +1,16 @@
+## [1.0.0] - 2017-10-25
+### Summary
+ - This is the first release
+
+### Added
+- update ExternaModule.php (Surya Prasanna)
+- fix the typo in comments (Surya Prasanna)
+- clean up the code (suryayalla)
+- Update README.md (Surya Prasanna)
+- Update README.md (Surya Prasanna)
+- Update README.md (Surya Prasanna)
+- add feature => enrol into random selected arm and also to default subject_id field (suryayalla)
+- add permission for hook_save_record and remove permission for all others (suryayalla)
+- add initial setting for the module and test the project settings feature of external modules (suryayalla)
+- Update README with module description (Philip Chase)
+- Initial commit (Philip Chase)
