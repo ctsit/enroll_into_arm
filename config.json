@@ -1,0 +1,64 @@
+{
+    "name": "Enroll into Arm",
+    "namespace": "EnrollIntoArm\\ExternalModule",
+    "description": "On Save of the record, this extension automatically assigns the record to a randomly selected arm.",
+    "permissions": [
+        "hook_save_record"
+    ],
+    "authors": [
+        {
+            "name": "Philip Chase",
+            "email": "pbc@ufl.edu",
+            "institution": "CTS-IT - University of Florida"
+        },
+        {
+            "name": "Taryn Stoffs",
+            "email": "tls@ufl.edu",
+            "institution": "CTS-IT - University of Florida"
+        },
+        {
+            "name": "Surya Prasanna",
+            "email": "suryayalla@ufl.edu",
+            "institution": "CTS-IT - University of Florida"
+        },
+        {
+            "name": "Prasad Lanka",
+            "email": "planka@ufl.edu",
+            "institution": "CTS-IT - University of Florida"
+        },
+        {
+            "name": "Dileep Rajput",
+            "email": "rajputd@ufl.edu",
+            "institution": "CTS-IT - University of Florida"
+        },
+        {
+            "name": "Stewart Wehmeyer",
+            "email": "swehmeyer@ufl.edu",
+            "institution": "CTS-IT - University of Florida"
+        },
+        {
+            "name": "Tiago Bember",
+            "email": "tbembersimeao@ufl.edu",
+            "institution": "CTS-IT - University of Florida"
+        },
+        {
+            "name": "Mike Conlon, Ph.D.",
+            "email": "mconlon@ufl.edu",
+            "institution": "University of Florida"
+        },
+        {
+            "name": "Carl J Pepine, M.D., MACC",
+            "email": "",
+            "institution": "University of Florida"
+        }
+    ],
+    "project-settings": [
+        {
+            "key": "enroll-into-arm-module-settings",
+            "name": "Enroll into arm module settings",
+            "required": false,
+            "type": "json",
+            "repeatable": false
+        }
+    ]
+}
