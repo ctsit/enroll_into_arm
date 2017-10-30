@@ -55,7 +55,7 @@ function enroll_into_arm_format_subject_id($record_id, $firstname, $lastname, $p
     if (!($firstname != null && strlen($firstname) > 0 && $lastname != null && strlen($lastname) > 0)) {
         return false;
     }
-    
+
     //do padding.
     $padded_s_record_id = str_pad($s_record_id, $padding_digits, "0", STR_PAD_LEFT);
     $res = substr($firstname, 0, 1) . substr($lastname, 0, 1) . $padded_s_record_id;
@@ -95,7 +95,7 @@ function enroll_into_arm_get_field_data($project_id, $record_id, $event_id, $fie
 * returns false if it can get nothing.
 */
 function enroll_into_arm_get_affiliated_event($arm) {
-    $events = REDCap::getEventNames(false, true);
+    $events = REDCap::getEventNames(true, false);
     foreach($events as $event_id => $details) {
         // pp($details);
         // pp($arm);
