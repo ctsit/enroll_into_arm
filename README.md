@@ -17,23 +17,31 @@ This feature also defaults subject_id in the affiliated with the given format.
 - After enabling the module, hit the configure button and add the following json to `Enroll into arm module settings`. This will set the project_settings for that project.
 
 ```
-{  
-   "randomization_field":"rand_group",
-   "pad_digits":3,
-   "first_name":"first_name",
-   "last_name":"last_name",
-   "subject_id":"subject_id",
-   "randomization_field_values":[  
-      {  
-         "value":"1",
-         "arm_to_enroll":"baseline_arm_2"
-      },
-      {  
-         "value":"2",
-         "arm_to_enroll":"baseline_arm_3"
-      }
-   ]
-}
+Array
+(
+   [randomization_field] => "rand_group"
+   [pad_digits] => 3
+   [first_name] => "first_name"
+   [last_name] => "last_name"
+   [subject_id] => "subject_id"
+   [randomization_field_values] => Array
+      (
+         [0] => Array
+             (
+                 [value] => "1"
+                 [arm_to_enroll] => "baseline_arm_2"
+             )
+
+         [1] => Array
+             (
+                 [value] => "2"
+                 [arm_to_enroll] => "baseline_arm_3"
+             )
+
+      )
+    
+)
+
 ```
 
 ## How to use?
