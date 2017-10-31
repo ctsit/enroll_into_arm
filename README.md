@@ -19,11 +19,11 @@ This feature also defaults subject_id in the affiliated with the given format.
 ```
 Array
 (
-   [randomization_field] => "rand_group"
-   [pad_digits] => 3
-   [first_name] => "first_name"
-   [last_name] => "last_name"
-   [subject_id] => "subject_id"
+   [randomization_field] => "rand_group",
+   [pad_digits] => 3,
+   [first_name] => "first_name",
+   [last_name] => "last_name",
+   [subject_id] => "subject_id",
    [randomization_field_values] => Array
       (
          [0] => Array
@@ -37,11 +37,8 @@ Array
                  [value] => "2"
                  [arm_to_enroll] => "baseline_arm_3"
              )
-
-      )
-    
+      ) 
 )
-
 ```
 
 ## How to use?
