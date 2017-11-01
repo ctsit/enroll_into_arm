@@ -21,9 +21,11 @@ The configuration example below can be tested by importing `sample.xml` project:
 
 * **Randomization field**: `rand_group` – randomized dropdown field located in the 1st arm of the project, whose options are `1` and `2`
 * **Randomization field mappings**:
-  1. Value: `1` / Destination arm: `arm_2` - if value is randomly set as `1`, the subject will be enrolled into `arm_2`
-  2. Value: `2` / Destination arm: `arm_3` - if value is randomly set as `2`, the subject will be enrolled into `arm_3`
+  1. Value: `1` / Arm to enroll: `subjects_arm_2` - if value is randomly set as `1`, the subject will be enrolled into `subjects_arm_2` arm
+  2. Value: `2` / Arm to enroll: `subjects_arm_3` - if value is randomly set as `2`, the subject will be enrolled into `subjects_arm_3` arm
 * **PAD digits length**: `3` - will be used to build subject ID value
 * **First name field**: `first_name` - will be used to build subject ID value
 * **Last name field**: `last_name` - will be used to build subject ID value
 * **Subject ID field**: `subject_id` - the destination field to receive the formatted subject ID value
+
+Obs.: The provided sample project does not include [REDCap Randomization](https://apps.icts.uiowa.edu/confluence/display/REDCapDocs/REDCap+Randomization+Module) configuration. It needs to be done manually if you like to enable randomization for `rand_group` field.
