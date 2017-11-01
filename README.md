@@ -3,7 +3,9 @@
 A REDCap Module to control the enrollment of subject into a study arm based on the value of a categorical variable. This feature allows automatic enrollment immediately after randomization with the [REDCap randomization module](https://apps.icts.uiowa.edu/confluence/display/REDCapDocs/REDCap+Randomization+Module).
 
 This feature also defaults subject_id in the affiliated with the given format.
+```
 <DAG_ID> + "-" + <FIRST_LETTER_IN_FIRST_NAME> + <FIRST_LETTER_IN_LAST_NAME> + <RECORD_ID_WITH_0_PADDED_DIGITS>
+```
 
 ## Prerequisites
 - [REDCap Modules](https://github.com/vanderbilt/redcap-external-modules)
