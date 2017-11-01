@@ -11,16 +11,19 @@ This feature also defaults subject_id in the affiliated with the given format.
 ## Installation
 - Clone this repo into to an `<redcap-root>/modules/enroll_into_arm_v1.0`
 - Go to **Control Center > Manage External Modules** and enable Enroll into arm module.
-- From the project you want to use this module, access **Manage External Module** page and enable Enroll Into Arm.
+- From the project you want to use this module, access **Manage External Modules** page and enable Enroll Into Arm.
 
 ## Configuration
-Yet on **Manage External Module**, click on **Configure** button in order to fill the settings form. Here is an example of use (import `sample.xml` to have a project that fits the example below):
+Yet on **Manage External Modules**, click on **Configure** button in order to fill the settings form.
 
-* **Randomization field**: `rand_options` (let's say that `rand_options` is a randomized dropdown field - located in the first Arm of your project - whose options are `2` and `3`, referencing arms 2 and 3)
+### Example
+The configuration example below can be tested by importing `sample.xml` project:
+
+* **Randomization field**: `rand_group` – randomized dropdown field located in the 1st arm of the project, whose options are `1` and `2`
 * **Randomization field mappings**:
-  1. Value: `2` / Destination arm: `arm_2` (if value is randomly set as `2`, the subject will be enrolled into `arm_2` arm)
-  2. Value: `3` / Destination arm: `arm_3` (if value is randomly set as `3`, the subject will be enrolled into `arm_2` arm)
-* **PAD digits length**: `3` (used to build subject ID value)
-* **First name field**: `first_name` (used to build subject ID value)
-* **Last name field**: `last_name` (used to build subject ID value)
-* **Subject ID field**: `subject_id` (the destination field to receive the formatted subject ID value)
+  1. Value: `1` / Destination arm: `arm_2` - if value is randomly set as `1`, the subject will be enrolled into `arm_2`
+  2. Value: `2` / Destination arm: `arm_3` - if value is randomly set as `2`, the subject will be enrolled into `arm_3`
+* **PAD digits length**: `3` - will be used to build subject ID value
+* **First name field**: `first_name` - will be used to build subject ID value
+* **Last name field**: `last_name` - will be used to build subject ID value
+* **Subject ID field**: `subject_id` - the destination field to receive the formatted subject ID value
