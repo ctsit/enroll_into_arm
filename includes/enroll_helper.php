@@ -9,17 +9,17 @@
  */
 function enroll_into_arm_enroll_helper($project_id, $project_settings, $record_id, $event_id) {
     global $Proj;
-    if (!enroll_into_arm_rand_group_exists($Proj->metadata, $project_settings->randomization_field)) {
+    if (!enroll_into_arm_rand_group_exists($Proj->metadata, $project_settings['randomization_field'])) {
         return;
     }
     if (empty($record_id)) {
         return;
     }
 
-    if (!($rad_val = enroll_into_arm_get_field_data($project_id, $record_id, $event_id, $project_settings->randomization_field))) {
+    if (!($rad_val = enroll_into_arm_get_field_data($project_id, $record_id, $event_id, $project_settings['randomization_field']))) {
         return;
     }
-    if (!($arm_name = enroll_into_arm_get_arm_name($project_settings->randomization_field_values, $rad_val))) {
+    if (!($arm_name = enroll_into_arm_get_arm_name($project_settings['randomization_field_values'], $rad_val))) {
         return;
     }
 
@@ -27,14 +27,14 @@ function enroll_into_arm_enroll_helper($project_id, $project_settings, $record_i
         return;
     }
 
-    $first_name = enroll_into_arm_get_field_data($project_id, $record_id, $event_id, $project_settings->first_name);
-    $last_name = enroll_into_arm_get_field_data($project_id, $record_id, $event_id, $project_settings->last_name);
+    $first_name = enroll_into_arm_get_field_data($project_id, $record_id, $event_id, $project_settings['first_name']);
+    $last_name = enroll_into_arm_get_field_data($project_id, $record_id, $event_id, $project_settings['last_name']);
 
-    $subject_id = enroll_into_arm_format_subject_id($record_id, $first_name, $last_name, $project_settings->pad_digits);
+    $subject_id = enroll_into_arm_format_subject_id($record_id, $first_name, $last_name, $project_settings['pad_digits']);
 
     // save record_id and subject_id into the randomly selecetd arm
     enroll_into_arm_save_record_field($project_id, $next_event_id, $record_id, "record_id", $record_id);
-    enroll_into_arm_save_record_field($project_id, $next_event_id, $record_id, $project_settings->subject_id, $subject_id);
+    enroll_into_arm_save_record_field($project_id, $next_event_id, $record_id, $project_settings['subject_id'], $subject_id);
 }
 
 /*
@@ -71,8 +71,8 @@ function enroll_into_arm_format_subject_id($record_id, $firstname, $lastname, $p
 */
 function enroll_into_arm_get_arm_name($randomization_values, $random_value) {
     foreach($randomization_values as $arm_details) {
-        if ($arm_details->value == $random_value) {
-            return $arm_details->arm_to_enroll;
+        if ($arm_details['value'] == $random_value) {
+            return $arm_details['arm_to_enroll'];
         }
     }
     return false;

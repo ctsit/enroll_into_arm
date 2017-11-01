@@ -3,7 +3,8 @@
     "namespace": "EnrollIntoArm\\ExternalModule",
     "description": "On Save of the record, this extension automatically assigns the record to a randomly selected arm.",
     "permissions": [
-        "hook_save_record"
+        "hook_save_record",
+        "hook_every_page_top"
     ],
     "authors": [
         {
@@ -54,11 +55,52 @@
     ],
     "project-settings": [
         {
-            "key": "enroll-into-arm-module-settings",
-            "name": "Enroll into arm module settings",
-            "required": false,
-            "type": "json",
-            "repeatable": false
+            "key": "randomization_field",
+            "name": "Randomization field",
+            "required": true,
+            "type": "text"
+        },
+        {
+            "key": "pad_digits",
+            "name": "PAD digits",
+            "required": true,
+            "type": "text"
+        },
+        {
+            "key": "first_name",
+            "name": "First name field",
+            "required": true,
+            "type": "text"
+        },
+        {
+            "key": "last_name",
+            "name": "Last name field",
+            "required": true,
+            "type": "text"
+        },
+        {
+            "key": "subject_id",
+            "name": "Subject ID",
+            "required": true,
+            "type": "text"
+        },
+        {
+            "key": "randomization_field_values",
+            "name": "Randomization field values",
+            "type": "sub_settings",
+            "repeatable": "true",
+            "sub_settings": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "type": "text"
+                },
+                {
+                    "key": "arm_to_enroll",
+                    "name": "Arm to enroll",
+                    "type": "text"
+                }
+            ]
         }
     ]
 }
