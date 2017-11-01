@@ -95,10 +95,8 @@ function enroll_into_arm_get_field_data($project_id, $record_id, $event_id, $fie
 * returns false if it can get nothing.
 */
 function enroll_into_arm_get_affiliated_event($arm) {
-    $events = REDCap::getEventNames(false, true);
+    $events = REDCap::getEventNames(true, false);
     foreach($events as $event_id => $details) {
-        // pp($details);
-        // pp($arm);
         if (strpos($details, $arm) !== false) {
             return $event_id;
         }
