@@ -1,6 +1,6 @@
 # Enroll into Arm
 
-A REDCap Module to control the enrollment of subject into a study arm based on the value of a categorical variable. This feature allows automatic enrollment immediately after randomization with the REDCap randomization module.
+A REDCap Module to control the enrollment of subject into a study arm based on the value of a categorical variable. This feature allows automatic enrollment immediately after randomization with the [REDCap randomization module](https://apps.icts.uiowa.edu/confluence/display/REDCapDocs/REDCap+Randomization+Module).
 
 This feature also defaults subject_id in the affiliated with the given format.
 <DAG_ID> + "-" + <FIRST_LETTER_IN_FIRST_NAME> + <FIRST_LETTER_IN_LAST_NAME> + <RECORD_ID_WITH_0_PADDED_DIGITS>
@@ -9,40 +9,18 @@ This feature also defaults subject_id in the affiliated with the given format.
 - [REDCap Modules](https://github.com/vanderbilt/redcap-external-modules)
 
 ## Installation
-- Clone this repo into to an `<redcap-root>/modules/enroll_into_arm_v1.0.0`
+- Clone this repo into to an `<redcap-root>/modules/enroll_into_arm_v1.0`
 - Go to **Control Center > Manage External Modules** and enable Enroll into arm module.
+- From the project you want to use this module, access **Manage External Module** page and enable Enroll Into Arm.
 
 ## Configuration
-- In the project go to Manage External Module and enable this module for the project.
-- After enabling the module, hit the configure button and add the following json to `Enroll into arm module settings`. This will set the project_settings for that project.
+Yet on **Manage External Module**, click on **Configure** button in order to fill the settings form. Here is an example of use (import `sample.xml` to have a project that fits the example below):
 
-```
-Array
-(
-   [randomization_field] => "rand_group",
-   [pad_digits] => 3,
-   [first_name] => "first_name",
-   [last_name] => "last_name",
-   [subject_id] => "subject_id",
-   [randomization_field_values] => Array
-      (
-         [0] => Array
-             (
-                 [value] => "1"
-                 [arm_to_enroll] => "baseline_arm_2"
-             )
-
-         [1] => Array
-             (
-                 [value] => "2"
-                 [arm_to_enroll] => "baseline_arm_3"
-             )
-      ) 
-)
-```
-
-## How to use?
-- Enable the randomization for a field.
-- The name of the field whose value is randomized should be placed under `project_settings->randomized_group`. 
-- For construction of subject_id we need first_name, last_name and length of the padded digits to be given, so the field_names for these should be given under json, so that the module automatically picks these values.
-- Also the field that stores the subject_id should be placed under `project_settings->subject_id`
+* **Randomization field**: `rand_options` (let's say that `rand_options` is a randomized dropdown field - located in the first Arm of your project - whose options are `2` and `3`, referencing arms 2 and 3)
+* **Randomization field mappings**:
+  1. Value: `2` / Destination arm: `arm_2` (if value is randomly set as `2`, the subject will be enrolled into `arm_2` arm)
+  2. Value: `3` / Destination arm: `arm_3` (if value is randomly set as `3`, the subject will be enrolled into `arm_2` arm)
+* **PAD digits length**: `3` (used to build subject ID value)
+* **First name field**: `first_name` (used to build subject ID value)
+* **Last name field**: `last_name` (used to build subject ID value)
+* **Subject ID field**: `subject_id` (the destination field to receive the formatted subject ID value)
