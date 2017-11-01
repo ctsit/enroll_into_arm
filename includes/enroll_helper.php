@@ -19,7 +19,7 @@ function enroll_into_arm_enroll_helper($project_id, $project_settings, $record_i
     if (!($rad_val = enroll_into_arm_get_field_data($project_id, $record_id, $event_id, $project_settings['randomization_field']))) {
         return;
     }
-    if (!($arm_name = enroll_into_arm_get_arm_name($project_settings['randomization_field_values'], $rad_val))) {
+    if (!($arm_name = enroll_into_arm_get_arm_name($project_settings['randomization_mappings'], $rad_val))) {
         return;
     }
 
@@ -69,8 +69,8 @@ function enroll_into_arm_format_subject_id($record_id, $firstname, $lastname, $p
 * This function get the arm name from the projects_settings and the $random_value that is selected.
 * return arm_name if doesn't get anything returns false instead.
 */
-function enroll_into_arm_get_arm_name($randomization_values, $random_value) {
-    foreach($randomization_values as $arm_details) {
+function enroll_into_arm_get_arm_name($randomization_mappings, $random_value) {
+    foreach($randomization_mappings as $arm_details) {
         if ($arm_details['value'] == $random_value) {
             return $arm_details['arm_to_enroll'];
         }
