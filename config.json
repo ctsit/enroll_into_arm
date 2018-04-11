@@ -80,13 +80,13 @@
         },
         {
             "key": "subject_id",
-            "name": "Subject ID",
+            "name": "Subject ID field",
             "required": true,
             "type": "text"
         },
         {
-            "key": "randomization_field_values",
-            "name": "Randomization field values",
+            "key": "randomization_mappings",
+            "name": "Randomization field mappings",
             "type": "sub_settings",
             "repeatable": "true",
             "sub_settings": [

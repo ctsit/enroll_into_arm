@@ -3,7 +3,9 @@
 A REDCap Module to control the enrollment of subject into a study arm based on the value of a categorical variable. This feature allows automatic enrollment immediately after randomization with the [REDCap randomization module](https://apps.icts.uiowa.edu/confluence/display/REDCapDocs/REDCap+Randomization+Module).
 
 This feature also defaults subject_id in the affiliated with the given format.
+```
 <DAG_ID> + "-" + <FIRST_LETTER_IN_FIRST_NAME> + <FIRST_LETTER_IN_LAST_NAME> + <RECORD_ID_WITH_0_PADDED_DIGITS>
+```
 
 ## Prerequisites
 - [REDCap Modules](https://github.com/vanderbilt/redcap-external-modules)
@@ -21,9 +23,11 @@ The configuration example below can be tested by importing `sample.xml` project:
 
 * **Randomization field**: `rand_group` – randomized dropdown field located in the 1st arm of the project, whose options are `1` and `2`
 * **Randomization field mappings**:
-  1. Value: `1` / Destination arm: `arm_2` - if value is randomly set as `1`, the subject will be enrolled into `arm_2`
-  2. Value: `2` / Destination arm: `arm_3` - if value is randomly set as `2`, the subject will be enrolled into `arm_3`
-* **PAD digits length**: `3` - will be used to build subject ID value
-* **First name field**: `first_name` - will be used to build subject ID value
-* **Last name field**: `last_name` - will be used to build subject ID value
-* **Subject ID field**: `subject_id` - the destination field to receive the formatted subject ID value
+  1. <br>**Value**: `1`<br>**Arm to enroll**: `subjects_arm_2` – if value is set as `1`, the subject will be enrolled into `subjects_arm_2` arm
+  2. <br>**Value**: `2`<br>**Arm to enroll**: `subjects_arm_3` – if value is set as `2`, the subject will be enrolled into `subjects_arm_3` arm
+* **PAD digits length**: `3` – will be used to build subject ID value
+* **First name field**: `first_name` – will be used to build subject ID value
+* **Last name field**: `last_name` – will be used to build subject ID value
+* **Subject ID field**: `subject_id` – the destination field to receive the formatted subject ID value
+
+Obs.: The provided sample project does not include [REDCap Randomization](https://apps.icts.uiowa.edu/confluence/display/REDCapDocs/REDCap+Randomization+Module) configuration. It needs to be done manually if you like to enable randomization for `rand_group` field.
