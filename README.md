@@ -1,4 +1,11 @@
-# Enroll into Arm
+# Enroll into Arm - ARCHIVED
+
+**This repository has been archived and is no longer actively maintained.**
+
+This project was archived as of October 1, 2025. The project for which it was written is now over. There's no funding to provide further maintenance for other projects. Please don't hesitate to use this code in accordance with the license; however, the authors are unable to offer any additional support.
+
+-----------
+
 
 A REDCap Module to control the enrollment of subject into a study arm based on the value of a categorical variable. This feature allows automatic enrollment immediately after randomization with the REDCap randomization module.
 
